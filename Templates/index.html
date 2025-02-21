@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+    <title>Calculadora de idade</title>
+</head>
+<body>
+<div class="container">
+    <h1>Calculadora de idade</h1>
+    <form method="post">
+        <label>Data de nascimento:</label>
+        <input type="date" name="data_nascimento">
+        <button>calcular idade</button>
+    </form>
+    {% if idade is not none %}
+    <p class="resultado">Você tem {{ idade }} anos.</p>
+    {% else %}
+    <p class="resultado">Por favor, informe a data de nascimento.</p>
+    {% endif %}
+</div>
+</body>
+</html>
